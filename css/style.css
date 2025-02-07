@@ -1,57 +1,29 @@
 @font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-Black.woff2") format("woff2"), url("../fonts/SourceSansPro-Black.woff") format("woff");
-  font-weight: 900;
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-Regular.woff2") format("woff2"), url("../fonts/SourceSans3-Regular.woff") format("woff");
   font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
-  font-weight: bold;
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-Semibold.woff2") format("woff2"), url("../fonts/SourceSans3-Semibold.woff") format("woff");
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-ExtraLight.woff2") format("woff2"), url("../fonts/SourceSansPro-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-Light.woff2") format("woff2"), url("../fonts/SourceSansPro-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2"), url("../fonts/SourceSansPro-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Agrandir Grand";
-  src: url("/fonts/Agrandir-GrandHeavy.woff2") format("woff2");
-  font-weight: 800;
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-Bold.woff2") format("woff2"), url("../fonts/SourceSans3-Bold.woff") format("woff");
   font-style: normal;
+  font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: "Agrandir";
-  src: url("/fonts/Agrandir-Regular.woff2") format("woff2");
-  font-weight: normal;
+  src: url("../fonts/Agrandir-GrandHeavy.woff2") format("woff2"), url("../fonts/Agrandir-GrandHeavy.woff") format("woff");
   font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
@@ -76,7 +48,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-short_right:before {
+.icon-arrow:before {
   content: "\e900";
 }
 
@@ -148,7 +120,7 @@ body {
   width: 100%;
   height: 100%;
   line-height: normal;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans 3";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #fff;
@@ -212,23 +184,30 @@ button {
   min-width: 100%;
   min-height: 100%;
   position: relative;
-  background-image: url("/img/background.jpg");
-  background-size: 100% auto;
-  -webkit-box-shadow: inset 0 0 0 900px rgba(30, 30, 30, 0.5);
-          box-shadow: inset 0 0 0 900px rgba(30, 30, 30, 0.5);
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+}
+.banner__content::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 .banner__container {
+  position: absolute;
   max-width: 100%;
   padding: 0 120px;
   margin: 0 auto;
+  z-index: 5;
 }
 .banner__body {
   max-width: 813px;
   padding: 50px 0px 100px 0px;
 }
 .banner__logo {
+  width: 183px;
   margin-bottom: 171px;
 }
 .banner__link {
@@ -241,21 +220,23 @@ button {
   text-transform: uppercase;
 }
 .banner__text_span {
-  font-family: "Source Sans Pro";
+  padding-bottom: 30px;
+  font-family: "Source Sans 3";
   font-size: 18px;
   font-weight: normal;
   line-height: 125.7%;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 .banner__title {
-  font-family: "Agrandir Grand";
+  font-family: "Agrandir";
   font-weight: 800;
   text-transform: uppercase;
   font-size: 80px;
   line-height: 94%;
 }
 .banner__title span {
-  font-family: "Agrandir Grand";
+  font-family: "Agrandir";
   font-size: 70px;
   line-height: 107%;
 }
@@ -278,9 +259,27 @@ button {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+.form__body {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 488px;
+  width: 100%;
+  height: 60px;
+  margin-right: 20px;
+  border: 2px solid #d7d7d7;
+  border-radius: 50px;
+}
+.form__body:active {
+  height: 61px;
+  margin-bottom: 22px;
+}
 .form__label {
+  margin-left: 32px;
   left: 35px;
-  top: -12px;
+  top: 0px;
   padding: 0px 4px;
   font-size: 18px;
   font-weight: normal;
@@ -292,9 +291,11 @@ button {
 }
 .form__email {
   position: absolute;
-  top: 5px;
+  margin-left: 35px;
+  top: 0px;
   width: 100%;
-  font-family: "Source Sans Pro";
+  max-width: 488px;
+  font-family: "Source Sans 3";
   font-size: 18px;
   font-weight: normal;
   line-height: 125.7%;
@@ -305,27 +306,82 @@ button {
   background-color: transparent;
   z-index: 1;
 }
+.form__email::-webkit-input-placeholder {
+  opacity: 0.6;
+  font-family: "Source Sans 3";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 125.7%;
+  text-align: left;
+  color: #d7d7d7;
+}
+.form__email::-moz-placeholder {
+  opacity: 0.6;
+  font-family: "Source Sans 3";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 125.7%;
+  text-align: left;
+  color: #d7d7d7;
+}
+.form__email:-ms-input-placeholder {
+  opacity: 0.6;
+  font-family: "Source Sans 3";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 125.7%;
+  text-align: left;
+  color: #d7d7d7;
+}
+.form__email::-ms-input-placeholder {
+  opacity: 0.6;
+  font-family: "Source Sans 3";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 125.7%;
+  text-align: left;
+  color: #d7d7d7;
+}
+.form__email::placeholder {
+  opacity: 0.6;
+  font-family: "Source Sans 3";
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 125.7%;
+  text-align: left;
+  color: #d7d7d7;
+}
+.form__email:active {
+  height: 61px;
+  margin-bottom: 22px;
+}
 .form__email:focus {
   outline: transparent;
   border-color: transparent;
 }
-.form__body {
-  position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  padding: 21px 38px 22px 38px;
-  margin-right: 20px;
-  border: 2px solid #d7d7d7;
-  border-radius: 50px;
+.form .icon-arrow {
+  font-size: 16px;
+  padding-left: 15px;
+  color: #d1a505;
+}
+.form .icon-arrow:hover {
+  color: #d7d7d7;
 }
 .form__button {
   display: inline-block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 285px;
-          flex: 0 1 285px;
-  padding: 15px 40px 15px 38px;
-  font-family: "Source Sans Pro";
+      -ms-flex: 0 0 285px;
+          flex: 0 0 285px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 285px;
+  height: 50px;
+  padding: 15px 35px 15px 35px;
+  font-family: "Source Sans 3";
   text-transform: uppercase;
   font-size: 20px;
   font-weight: normal;
@@ -334,6 +390,7 @@ button {
   color: #fff;
   border: 2px solid #d1a505;
   border-radius: 50px;
+  cursor: pointer;
   background-color: transparent;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -341,64 +398,12 @@ button {
 .form__button:hover {
   background: #d1a505;
 }
-.form__button:hover .icon-form {
-  color: #fff;
-  font-size: 18px;
-}
-
-.icon-form {
-  color: #d1a505;
-  font-size: 18px;
-}
-
-::-webkit-input-placeholder {
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 125.7%;
-  text-align: left;
-  color: #d7d7d7;
-}
-
-::-moz-placeholder {
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 125.7%;
-  text-align: left;
-  color: #d7d7d7;
-}
-
-:-ms-input-placeholder {
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 125.7%;
-  text-align: left;
-  color: #d7d7d7;
-}
-
-::-ms-input-placeholder {
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 125.7%;
-  text-align: left;
-  color: #d7d7d7;
-}
-
-::placeholder {
-  font-family: "Source Sans Pro";
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 125.7%;
-  text-align: left;
-  color: #d7d7d7;
-}
 
 @media screen and (max-width: 920px) {
   .banner__content {
-    background-image: url("/img/Img2.jpg");
+    background-image: url("../img/Img2.jpg");
+    background-size: cover;
+    background-position: 100% auto;
   }
   .banner__container {
     padding: 0px 16px;
@@ -421,6 +426,7 @@ button {
     margin-bottom: 18px;
   }
   .banner__title {
+    max-width: 690px;
     font-size: 64px;
     line-height: 84%;
   }
@@ -445,6 +451,7 @@ button {
             align-items: center;
   }
   .form__body {
+    max-width: 100%;
     width: 100%;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
@@ -456,12 +463,16 @@ button {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
-    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 @media screen and (max-width: 590px) {
   .banner__content {
-    background-image: url("/img/Img2.jpg");
+    background-image: url("../img/Img2.jpg");
+    background-size: cover;
+    background-size: center right;
   }
   .banner__container {
     padding: 0px 16px;
@@ -471,6 +482,7 @@ button {
     padding: 50px 0px 70px 0px;
   }
   .banner__logo {
+    width: 138px;
     margin-bottom: 156px;
   }
   .banner__link {
