@@ -498,6 +498,7 @@ button {
     margin-bottom: 18px;
   }
   .banner__title {
+    max-width: 100%;
     font-size: 50px;
     line-height: 84%;
   }
@@ -508,5 +509,17 @@ button {
   .banner__subtitle {
     font-size: 19px;
     margin-bottom: 36px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .banner__logo {
+    width: 138px;
+    margin-bottom: 120px;
+  }
+  .banner__title {
+    font-size: 44px;
+  }
+  .banner__title span {
+    font-size: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
