@@ -173,7 +173,7 @@ button {
   flex-direction: column;
   min-height: 100%;
   width: 100vw;
-  height: 100vw;
+  height: 100%;
   max-width: 100%;
 }
 
@@ -367,10 +367,11 @@ button {
       background-position: 100% auto;
     }
     &__container {
+      max-width: 100%;
+      width: 100%;
       padding: 0px 16px;
     }
     &__body {
-      max-width: 100%;
       padding: 50px 0px 70px 0px;
     }
 
@@ -381,6 +382,7 @@ button {
       height: 45px;
     }
     &__text {
+      width: 100%;
       font-size: 22px;
       &_span {
         font-size: 16px;
